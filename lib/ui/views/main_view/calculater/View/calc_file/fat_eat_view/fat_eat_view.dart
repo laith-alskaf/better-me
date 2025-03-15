@@ -98,7 +98,7 @@ class _FatEatViewState extends State<FatEatView> {
                             ),
                           ),
                           Container(
-                            width: size.width*0.819,
+                            width: size.width*0.81,
 
                             child: TextFormField(
                               keyboardType: TextInputType.number,
@@ -191,7 +191,7 @@ class _FatEatViewState extends State<FatEatView> {
                             ),
                           ),
                           Container(
-                            width: size.width*0.819,
+                            width: size.width*0.81,
                             child: TextFormField(
                               keyboardType: TextInputType.number,
                               validator: (value){
@@ -378,7 +378,6 @@ class _FatEatViewState extends State<FatEatView> {
                                       width: size.width*0.1,
                                       height:size.width*0.088 ,
                                     ),
-                                    SizedBox(width: size.width*0.02,),
                                     Text("Calculate",
                                         style: TextStyle(color:AppColors.blackwithopacity,
                                             fontSize: size.width*0.04)),

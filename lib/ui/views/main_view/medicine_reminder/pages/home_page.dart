@@ -115,7 +115,7 @@ class TopContainer extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 1.h),
                 child: Text(
                   !snapshot.hasData ? '0' : snapshot.data!.length.toString(),
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
               );
             }),
@@ -142,7 +142,7 @@ class BottomContainer extends StatelessWidget {
           return Center(
             child: Text(
               'No Medicine',
-              style: Theme.of(context).textTheme.headline3,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           );
         } else {
@@ -270,7 +270,7 @@ class MedicineCard extends StatelessWidget {
                 medicine.medicineName!,
                 overflow: TextOverflow.fade,
                 textAlign: TextAlign.start,
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
             SizedBox(
@@ -283,7 +283,7 @@ class MedicineCard extends StatelessWidget {
                   : "Every ${medicine.interval} hour",
               overflow: TextOverflow.fade,
               textAlign: TextAlign.start,
-              style: Theme.of(context).textTheme.caption,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
         ),
