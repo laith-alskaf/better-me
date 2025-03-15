@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SharedGridviewView extends StatefulWidget {
   final String text;
@@ -87,10 +86,7 @@ class _SharedGridviewViewState extends State<SharedGridviewView>
                                 widget.text,
                                 textDirection: TextDirection.rtl,
                                 textAlign: TextAlign.center,
-                                style: GoogleFonts.flowRounded(
-                                 color: Colors.blue,
-                                  fontSize: 20,
-                                ),
+
                               ),
                             ),
 
@@ -119,10 +115,7 @@ class _SharedGridviewViewState extends State<SharedGridviewView>
                             widget.text,
                             textDirection: TextDirection.rtl,
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.flowRounded(
-                              color: Colors.black,
-                              fontSize: 17,
-                            ),
+
                           ),
                         ),
 

@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import '../ui/views/main_view/medicine_reminder/constants.dart';
+
 class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
@@ -64,32 +66,32 @@ class _MyAppState extends State<MyApp> {
                 //     ),
                 //   ),
                 //   textTheme: TextTheme(
-                //     headline3: TextStyle(
+                //     bodySmall: TextStyle(
                 //       fontSize: 28.sp,
                 //       color: kSecondaryColor,
                 //       fontWeight: FontWeight.w500,
                 //     ),
-                //     headline4: TextStyle(
+                //     headlineMedium: TextStyle(
                 //       fontSize: 24.sp,
                 //       fontWeight: FontWeight.w800,
                 //       color: kTextColor,
                 //     ),
-                //     headline5: TextStyle(
+                //     headlineLarge: TextStyle(
                 //       fontSize: 16.sp,
                 //       fontWeight: FontWeight.w900,
                 //       color: kTextColor,
                 //     ),
-                //     headline6: GoogleFonts.poppins(
+                //     headlineSmall: GoogleFonts.poppins(
                 //       fontSize: 13.sp,
                 //       color: kTextColor,
                 //       fontWeight: FontWeight.w600,
                 //       letterSpacing: 1.0,
                 //     ),
-                //     subtitle1:
+                //     bodyMedium:
                 //     GoogleFonts.poppins(fontSize: 15.sp, color: kPrimaryColor),
-                //     subtitle2:
+                //     bodyLarge:
                 //     GoogleFonts.poppins(fontSize: 12.sp, color: kTextLightColor),
-                //     caption: GoogleFonts.poppins(
+                //     displayMedium: GoogleFonts.poppins(
                 //       fontSize: 9.sp,
                 //       fontWeight: FontWeight.w400,
                 //       color: kTextLightColor,

@@ -47,6 +47,8 @@ class NetworkUtil {
           response = await client.delete(uri,
               body: jsonEncode(body), headers: headers);
           break;
+        case RequestType.MULTIPART:
+          // TODO: Handle this case.
       }
 
       dynamic result;

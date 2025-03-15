@@ -81,7 +81,7 @@ class _NewEntryPageState extends State<NewEntryPage> {
                 ),
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle2!
+                    .bodySmall!
                     .copyWith(color: kOtherColor),
               ),
               const PanelTitle(
@@ -98,7 +98,7 @@ class _NewEntryPageState extends State<NewEntryPage> {
                 ),
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle2!
+                    .bodyMedium!
                     .copyWith(color: kOtherColor),
               ),
               SizedBox(
@@ -171,7 +171,7 @@ class _NewEntryPageState extends State<NewEntryPage> {
                     child: Center(
                       child: Text(
                         'Confirm',
-                        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: kScaffoldColor,
                             ),
                       ),
@@ -430,7 +430,7 @@ class _SelectTimeState extends State<SelectTime> {
                   : "${convertTime(_time.hour.toString())}:${convertTime(_time.minute.toString())}",
               style: Theme.of(context)
                   .textTheme
-                  .subtitle2!
+                  .bodyMedium!
                   .copyWith(color: kScaffoldColor),
             ),
           ),
@@ -461,7 +461,7 @@ class _IntervalSelectionState extends State<IntervalSelection> {
         children: [
           Text(
             'Remind me every',
-            style: Theme.of(context).textTheme.subtitle2!.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   color: kTextColor,
                 ),
           ),
@@ -472,7 +472,7 @@ class _IntervalSelectionState extends State<IntervalSelection> {
             hint: _selected == 0
                 ? Text(
                     'Select an Interval',
-                    style: Theme.of(context).textTheme.caption!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: kPrimaryColor,
                         ),
                   )
@@ -485,7 +485,7 @@ class _IntervalSelectionState extends State<IntervalSelection> {
                   value: value,
                   child: Text(
                     value.toString(),
-                    style: Theme.of(context).textTheme.caption!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: kSecondaryColor,
                         ),
                   ),
@@ -505,7 +505,7 @@ class _IntervalSelectionState extends State<IntervalSelection> {
             _selected == 1 ? " hour" : " hours",
             style: Theme.of(context)
                 .textTheme
-                .subtitle2!
+                .bodyMedium!
                 .copyWith(color: kTextColor),
           ),
         ],
@@ -572,7 +572,7 @@ class MedicineTypeColumn extends StatelessWidget {
                   name,
                   style: Theme.of(context)
                       .textTheme
-                      .subtitle2!
+                      .bodyMedium!
                       .copyWith(color: isSelected ? Colors.white : kOtherColor),
                 ),
               ),

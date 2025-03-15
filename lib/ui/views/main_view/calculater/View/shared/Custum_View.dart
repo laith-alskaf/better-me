@@ -49,8 +49,8 @@ class _CustumViewState extends State<CustumView> {
               widget.titel,
               style: TextStyle(
                   color: AppColors.blackwithopacity,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1),
+                  fontWeight: FontWeight.w500,
+                  ),
             ),
             IconButton(onPressed: (){
               widget.infoonpresed!();

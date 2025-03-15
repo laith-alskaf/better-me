@@ -98,7 +98,7 @@ class _CaloriesViewState extends State<CaloriesView> {
                             ),
                           ),
                           Container(
-                            width: size.width*0.819,
+                            width: size.width*0.81,
 
                             child: TextFormField(
                               keyboardType: TextInputType.number,
@@ -191,7 +191,7 @@ class _CaloriesViewState extends State<CaloriesView> {
                             ),
                           ),
                           Container(
-                            width: size.width*0.819,
+                            width: size.width*0.81,
                             child: TextFormField(
                               validator: (value){
                                 if(value!.isEmpty)
@@ -369,22 +369,22 @@ class _CaloriesViewState extends State<CaloriesView> {
                                   desc:calories.toStringAsFixed(0),
                               )..show();
                             }},
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.caloriesview,
+                                    fixedSize: Size(size.width*0.38, size.width*0.1)
+                                ),
                                 child: Row(
                                   children: [
                                     SvgPicture.asset("images/calculator.svg",
                                       color: AppColors.blackwithopacity,
                                       width: size.width*0.1,
-                                      height:size.width*0.088 ,
+                                      height:size.width*0.08 ,
                                     ),
-                                    SizedBox(width: size.width*0.02,),
+
                                     Text("Calculate",
                                         style: TextStyle(color:AppColors.blackwithopacity,
                                             fontSize: size.width*0.04)),
                                   ],
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: AppColors.caloriesview,
-                                    fixedSize: Size(size.width*0.38, size.width*0.1)
                                 )
 
                             ),

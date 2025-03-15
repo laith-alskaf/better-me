@@ -130,7 +130,7 @@ class SmookingCostView extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(
                                 top: size.width * 0.065,
-                                right: size.width * 0.03),
+                                right: size.width * 0.028),
                             child: SvgPicture.asset(
                               "images/plus-circle.svg",
                             ),
