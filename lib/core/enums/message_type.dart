@@ -1,6 +1,13 @@
-enum MessageType{
-  REJECTED,
-  SUCCESS,
-  INFO,
-  WARNING,
+enum MessageType {
+  /// Request was rejected
+  rejected,
+  
+  /// Operation was successful
+  success,
+  
+  /// Informational message
+  info,
+  
+  /// Warning message
+  warning,
 }
