@@ -67,61 +67,65 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
         // خلفية متدرجة محسّنة
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
             colors: [
               AppColors.primary50,
               AppColors.background,
+              AppColors.primary50.withValues(alpha: 0.3),
             ],
           ),
         ),
-        child: Center(
-          child: FadeTransition(
-            opacity: _fadeAnimation,
-            child: ScaleTransition(
-              scale: _scaleAnimation,
+        child: SafeArea(
+          child: Center(
+            child: FadeTransition(
+              opacity: _fadeAnimation,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // الشعار الرئيسي
-                  Container(
-                    padding: EdgeInsets.all(DesignSystem.base),
-                    decoration: BoxDecoration(
-                      color: AppColors.background,
-                      borderRadius: BorderRadius.circular(DesignSystem.radiusLg),
-                      boxShadow: DesignSystem.shadowElevation8,
+                  // الشعار الرئيسي مع animation
+                  ScaleTransition(
+                    scale: _scaleAnimation,
+                    child: _buildLogoContainer(),
+                  ),
+
+                  // المسافة
+                  SizedBox(height: 8.h),
+
+                  // اسم التطبيق
+                  FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: Text(
+                      'BetterMe',
+                      style: TextStyle(
+                        fontSize: 36.sp,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.primary,
+                        letterSpacing: 1.5,
+                        shadows: [
+                          Shadow(
+                            color: AppColors.primary.withValues(alpha: 0.3),
+                            offset: const Offset(0, 2),
+                            blurRadius: 8,
+                          ),
+                        ],
+                      ),
                     ),
-                    child: Column(
-                      children: [
-                        // أيقونة أو شعار
-                        Icon(
-                          Icons.health_and_safety_rounded,
-                          size: 60.sp,
-                          color: AppColors.primary,
-                        ),
-                        SizedBox(height: DesignSystem.base.h),
-                        // اسم التطبيق
-                        Text(
-                          'BetterMe',
-                          style: TextStyle(
-                            fontSize: 32.sp,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.primary,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                        SizedBox(height: 4.h),
-                        // الشعار الفرعي
-                        Text(
-                          'صحتك أولاً'.tr,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.textSecondary,
-                            letterSpacing: 0.2,
-                          ),
-                        ),
-                      ],
+                  ),
+
+                  SizedBox(height: 2.h),
+
+                  // الشعار الفرعي
+                  FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: Text(
+                      'صحتك أولاً'.tr,
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textSecondary,
+                        letterSpacing: 0.5,
+                      ),
                     ),
                   ),
 
@@ -135,13 +139,13 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                   ),
 
                   // المسافة
-                  SizedBox(height: 6.h),
+                  SizedBox(height: 4.h),
 
                   // نص التحميل
                   Text(
                     'جاري التحميل...'.tr,
                     style: TextStyle(
-                      fontSize: 12.sp,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w500,
                       color: AppColors.textSecondary,
                       letterSpacing: 0.3,
@@ -149,6 +153,90 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
                   ),
                 ],
               ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// بناء حاوية اللوغو مع تأثيرات احترافية
+  Widget _buildLogoContainer() {
+    return Container(
+      // حجم متناسب مع جميع الشاشات
+      width: 65.w, // 65% من عرض الشاشة
+      height: 65.w, // مربع متساوي الأبعاد
+      constraints: BoxConstraints(
+        maxWidth: 280, // حد أقصى للشاشات الكبيرة
+        maxHeight: 280,
+        minWidth: 200, // حد أدنى للشاشات الصغيرة
+        minHeight: 200,
+      ),
+      decoration: BoxDecoration(
+        // خلفية بيضاء مع شفافية خفيفة
+        color: AppColors.background,
+        // شكل دائري احترافي
+        shape: BoxShape.circle,
+        // ظل ثلاثي الطبقات للعمق
+        boxShadow: [
+          // ظل خارجي كبير
+          BoxShadow(
+            color: AppColors.primary.withValues(alpha: 0.2),
+            blurRadius: 40,
+            spreadRadius: 5,
+            offset: const Offset(0, 10),
+          ),
+          // ظل متوسط
+          BoxShadow(
+            color: AppColors.primary.withValues(alpha: 0.15),
+            blurRadius: 20,
+            spreadRadius: 2,
+            offset: const Offset(0, 5),
+          ),
+          // ظل داخلي صغير
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            spreadRadius: 1,
+            offset: const Offset(0, 2),
+          ),
+        ],
+        // حدود ملونة خفيفة
+        border: Border.all(
+          color: AppColors.primary.withValues(alpha: 0.1),
+          width: 2,
+        ),
+      ),
+      child: ClipOval(
+        child: Container(
+          // padding داخلي خفيف
+          padding: EdgeInsets.all(4.w),
+          decoration: BoxDecoration(
+            // gradient خفيف للخلفية
+            gradient: RadialGradient(
+              colors: [
+                AppColors.background,
+                AppColors.primary50.withValues(alpha: 0.1),
+              ],
+              center: Alignment.center,
+              radius: 1.0,
+            ),
+          ),
+          child: ClipOval(
+            child: Image.asset(
+              'images/logo.jpg',
+              fit: BoxFit.cover, // تغطية كاملة
+              // placeholder أثناء التحميل
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: AppColors.primary50,
+                  child: Icon(
+                    Icons.health_and_safety_rounded,
+                    size: 35.w,
+                    color: AppColors.primary,
+                  ),
+                );
+              },
             ),
           ),
         ),
